@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
             'description' => 'Deskripsi project 1',
             'image' => 'https://via.placeholder.com/150',
             'github_url' => 'link github',
-            'link' => 'https://example.com/project1',
+            'demo_link' => 'https://example.com/project1',
         ]);
     }
 }
