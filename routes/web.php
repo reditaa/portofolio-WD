@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController ;
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $projects = Project::all();
+    return view('welcome', compact('projects'));
 });
 
 
@@ -20,7 +23,13 @@ Route::middleware('auth')->group(function () {
     
     Route::middleware('auth')->prefix('dashboard')->group(function () {
         Route::get('/', function () {
-            return view('dashboard');
+            $projectCount = Project::count();
+            $userCount = User::count();
+            $projectsWithDemo = Project::whereNotNull('demo_link')->count();
+            $projectsWithGithub = Project::whereNotNull('github_url')->count();
+            $latestProjects = Project::latest()->take(8)->get();
+            $latestUsers = User::latest()->take(5)->get();
+            return view('dashboard', compact('projectCount', 'userCount', 'projectsWithDemo', 'projectsWithGithub', 'latestProjects', 'latestUsers'));
             })->name('dashboard');
             Route::resource('project',ProjectController::class)->names('project');
             
