@@ -11,10 +11,10 @@
 
     <!-- SIDEBAR -->
    <aside class="w-64 bg-white shadow-lg sticky top-0 h-screen">
-
-        <div class="p-6 font-bold text-xl border-b">
-            🚀 Portfolio Admin
-        </div>
+<div class="p-6 font-bold text-xl border-b flex items-center gap-2 whitespace-nowrap">
+    <span>🚀</span>
+    <span>Portfolio Admin</span>
+</div>
 
         <nav class="mt-4">
 

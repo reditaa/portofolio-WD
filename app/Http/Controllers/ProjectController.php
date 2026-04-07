@@ -22,7 +22,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.project.create');
     }
 
     /**
@@ -57,7 +57,8 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('dashboard.project.edit', compact('project'));
     }
 
     /**

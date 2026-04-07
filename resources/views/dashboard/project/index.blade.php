@@ -303,8 +303,8 @@
             document.getElementById('edit-form').action = baseUrl + '/' + project.id;
             document.getElementById('edit_title').value = project.title;
             document.getElementById('edit_description').value = project.description;
-            document.getElementById('edit_github').value = project.github || '';
-            document.getElementById('edit_link').value = project.link || '';
+            document.getElementById('edit_github').value = project.github_url || '';
+            document.getElementById('edit_link').value = project.demo_link || '';
 
             if (project.image) {
                 document.getElementById('edit_preview').src = storageUrl + '/' + project.image;

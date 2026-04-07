@@ -18,7 +18,7 @@
         >
             <div class="absolute w-56 h-56 md:w-80 md:h-80 bg-red-500 rounded-full blur-3xl opacity-30"></div>
 
-            <img src="{{ asset('images/profile.jpg') }}" 
+            <img src="{{ asset('storage/profile.jpg') }}" 
                  alt="Profile"
                  class="relative w-40 h-40 sm:w-52 sm:h-52 md:w-80 md:h-80 object-cover rounded-full border-4 border-red-400 shadow-2xl">
         </div>
@@ -154,7 +154,8 @@ function typingEffect() {
 
             <!-- Foto -->
             <div class="flex justify-center">
-                <img src="https://via.placeholder.com/400"
+                <img src="{{ asset('storage/profile.jpg') }}"
+                     alt="Profile"
                      class="rounded-2xl shadow-xl hover:scale-105 transition duration-500">
             </div>
 
@@ -165,8 +166,7 @@ function typingEffect() {
                 </h3>
 
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Saya seorang pelajar yang sedang belajar menjadi web developer.
-                    Saya suka membuat website modern, interaktif, dan responsive menggunakan Laravel & Tailwind CSS.
+                    “Saya anak kedua dalam keluarga, seorang introvert yang menikmati waktu sendiri. Kesendirian bagi saya bukan kesepian, tapi kesempatan untuk berpikir, bersantai, dan melakukan hal-hal yang saya sukai. Saya suka tidur—itu cara saya mengisi ulang energi dan menenangkan diri setelah hari-hari yang panjang. Warna favorit saya adalah merah; sesuatu yang cerah dan berani, meski saya sendiri lebih tenang dan tidak terlalu suka keramaian. Saya tidak suka basa-basi atau interaksi yang dipaksakan. Hidup saya sederhana: menikmati momen sendiri, menghargai ketulusan, dan selalu nyaman dengan diri sendiri.
                 </p>
 
                 <div class="grid grid-cols-2 gap-6">
@@ -176,7 +176,7 @@ function typingEffect() {
                     </div>
 
                     <div class="text-center bg-red-50 p-4 rounded-lg">
-                        <div class="text-3xl font-bold text-red-500">1+</div>
+                        <div class="text-3xl font-bold text-red-500">2+</div>
                         <div class="text-gray-600">Tahun Belajar</div>
                     </div>
                 </div>
@@ -186,37 +186,49 @@ function typingEffect() {
     </div>
 </section>
 
-<!-- SKILLS (FIX ERROR DISINI 🔥) -->
-<section id="skills" class="py-20 bg-gray-50 scroll-mt-24">
-    <div class="max-w-6xl mx-auto px-4">
+<div class="grid md:grid-cols-3 gap-8 text-center items-center">
 
-        <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">
-            Skills
-        </h2>
+    <!-- Frontend -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-4 text-center">Frontend</h3>
 
-        <div class="grid md:grid-cols-3 gap-8">
-
-            <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition duration-300">
-                <div class="text-4xl text-red-500 mb-4"><i class="fas fa-code"></i></div>
-                <h3 class="text-xl font-semibold mb-2">Frontend</h3>
-                <p class="text-gray-600">HTML, CSS, JavaScript, Tailwind</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition duration-300">
-                <div class="text-4xl text-red-500 mb-4"><i class="fas fa-cog"></i></div>
-                <h3 class="text-xl font-semibold mb-2">Backend</h3>
-                <p class="text-gray-600">PHP, Laravel, MySQL</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition duration-300">
-                <div class="text-4xl text-red-500 mb-4"><i class="fas fa-palette"></i></div>
-                <h3 class="text-xl font-semibold mb-2">Design</h3>
-                <p class="text-gray-600">Figma, UI/UX, Responsive</p>
-            </div>
-
+        <div class="flex justify-center items-center gap-4 mb-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-10 h-10 object-contain">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-10 h-10 object-contain">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-10 h-10 object-contain">
+            <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" class="w-10 h-10 object-contain">
         </div>
+
+        <p class="text-gray-600 text-center">HTML, CSS, JavaScript, Tailwind</p>
     </div>
-</section>
+
+    <!-- Backend -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-4 text-center">Backend</h3>
+
+        <div class="flex justify-center items-center gap-4 mb-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10 h-10 object-contain">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" class="w-10 h-10 object-contain">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-10 h-10 object-contain">
+        </div>
+
+        <p class="text-gray-600 text-center">PHP, Laravel, MySQL</p>
+    </div>
+
+    <!-- Design -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-4 text-center">Design</h3>
+
+        <div class="flex justify-center items-center gap-4 mb-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-10 h-10 object-contain">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" class="w-10 h-10 object-contain">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" class="w-10 h-10 object-contain">
+        </div>
+
+        <p class="text-gray-600 text-center">Figma, UI/UX, Responsive</p>
+    </div>
+
+</div>
 
 <!-- PROJECT -->
 <section id="project" class="py-20 bg-white scroll-mt-24">
